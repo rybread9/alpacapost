@@ -4,6 +4,10 @@ const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 const app = express()
 const db = mongoose.connection
+const Postcard = require('./models/postcards.js')
+
+// Controllers
+const postcardController = require('./controllers/postcards.js')
 // Port
 // Allow use of Heroku's port or your own local port, depending on your environment
 const PORT = process.env.PORT || 3000
@@ -34,8 +38,9 @@ app.use(methodOverride('_method'))
 
 
 // Routes
+// index
 app.get('/', (req, res)=>{
-  res.send('Hello world!')
+  res.render('index.ejs')
 })
 
 // Listen
