@@ -5,13 +5,13 @@
     <title></title>
   </head>
   <body>
-    <form action="/alpacapost" method="POST">
-        Front Image: <input type="img" name="frontImage" value="image URL"/><br/>
-        Dear: <input type="text" name="sendToName" value="receiver's name here"/><br/>
-        <!-- Send To: <input type="email" name="sendToEmail" value="receiver's email here"/><br/> -->
-        Message: <input type="text" name="message" value="Life is good on the road..."/><br/>
-        From: <input type="text" name="sendFromName" value="your name here"/><br/>
-        <input type="submit" value="Submit Edits"/>
+    <form action="/alpacapost/<%=postcard.id%>?_method=PUT" method="POST">
+        Front Image: <input type="img" name="frontImage" value="<%=postcard.frontImage%>"/><br/>
+        Dear: <input type="text" name="sendToName" placeholder="receiver's name here"/><br/>
+        <!-- Send To: <input type="email" name="sendToEmail" placeholder="receiver's email here"/><br/> -->
+        Message: <input type="text" name="message" placeholder="Life is good on the road..."/><br/>
+        From: <input type="text" name="sendFromName" placeholder="your name here"/><br/>
+        <input type="submit" value="Submit Edit"/>
     </form>
 
   </form>
