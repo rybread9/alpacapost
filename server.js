@@ -4,7 +4,10 @@ const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
 const db = mongoose.connection
+const PORT = process.env.PORT || 3000
+// require the schema
 const Postcard = require('./models/postcards.js')
+// require the seed data
 const postcards = require('./models/seed.js')
 
 
@@ -14,23 +17,9 @@ const postcards = require('./models/seed.js')
 
 // Port
 // Allow use of Heroku's port or your own local port, depending on your environment
-const PORT = process.env.PORT || 3000
 
-// Database
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'alpacapost'
 
-// // Connect to Mongo
-mongoose.connect(MONGODB_URI, {useNewUrlParser: true})
-//
-// Error / success
-db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
-db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
-db.on('disconnected', () => console.log('mongo disconnected'));
 
-// open the connection to mongo
-db.on('open' , ()=>{
-  console.log('connected to mongo');
-});
 
 // Middleware- after config and dependencies but bedore routes
 // use public folder for static asses, like css
@@ -42,25 +31,27 @@ app.use(express.urlencoded({extended:false}))
 // use PUT and DELETE verbs (HTML only allows GET and POST)
 // app.use(methodOverride('_method'))
 
-// // middleware for postcardsController
+// middleware for postcardsController
 // app.use('/postcards', postcardsController)
 
 // index
 app.get('/alpacapost', (req, res)=>{
-  // Postcard.find({}, (error, allPostcards)=>{
+  Postcard.find({}, (error, allPostcards)=>{
     res.render('index.ejs', {
-      postcards: postcards
+      postcards: allPostcards
     })
-  // })
+  })
 })
 
 // require seed data
 // const seed = require('./models/seed.js');
 
-// // SEED ROUTE
-// app.get('/alpacapost/seed', (req, res)=>{
-//  res.send('this is your seed data')
-// })
+// SEED ROUTE
+app.get('/alpacapost/seed', (req, res)=>{
+  Postcard.create(postcards, (err, createdPostcard)=>{
+    res.redirect('/alpacapost')
+  })
+})
 
 // create postcard
 app.post('/alpacapost', (req, res)=>{
@@ -75,10 +66,44 @@ app.get('/alpacapost/new', (req, res)=>{
   res.render('new.ejs')
 })
 
+// show
+app.get('/alpacapost/:id', (req, res)=>{
+  Postcard.findById(req.params.id, (err, foundPostcard)=>{
+    res.render('show.ejs',
+    {
+      postcard: foundPostcard
+      // postcard: postcards[req.params.id],
+      // index: [req.params.id]
+    })
+  })
+})
+
+// edit route
+app.get('/alpacapost/:id/edit', (req, res)=>{
+  Postcard.findById(req.params.id, (err, foundPostcard)=>{
+    res.render('edit.ejs', {
+      postcard: postcards[req.params.id]
+
+    })
+  })
+})
 
 
 
 
+
+// Error / success
+db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
+db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
+db.on('disconnected', () => console.log('mongo disconnected'));
+// Database
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'alpacapost'
+// // Connect to Mongo
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true})
+// open the connection to mongo
+db.on('open' , ()=>{
+  console.log('connected to mongo');
+});
 // Listen
 app.listen(PORT, ()=>{
   console.log('Listening on port: ', PORT);
