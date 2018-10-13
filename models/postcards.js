@@ -1,4 +1,4 @@
-const mongoose = require('mogoose');
+const mongoose = require('mongoose');
 
 const postcardSchema = mongoose.Schema ({
   frontImage: String,
@@ -6,9 +6,9 @@ const postcardSchema = mongoose.Schema ({
   sendToName: String,
   sendToEmail: String,
   message: String,
-  from: String
+  sendFromName: String
 })
 
-const Postcard = mongoose.model('Postcard', postcardSchema);
+const Postcards = mongoose.model('Postcards', postcardSchema);
 
-module.exports = Postcard;
+module.exports = Postcards;

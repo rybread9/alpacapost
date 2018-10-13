@@ -4,16 +4,18 @@ const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 const app = express()
 const db = mongoose.connection
-const Postcard = require('./models/postcards.js')
+// const Postcard = require('./models/postcards.js')
 
-// Controllers
-const postcardController = require('./controllers/postcards.js')
+// Controller Middleware
+const postcardsController = require('./controllers/postcards.js')
+// app.use('/postcards', postcardsController)
+
 // Port
 // Allow use of Heroku's port or your own local port, depending on your environment
 const PORT = process.env.PORT || 3000
 
 // Database
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'crud_app'
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'postcards'
 
 // Connect to Mongo
 mongoose.connect(MONGODB_URI, {useNewUrlParser: true})
@@ -24,7 +26,9 @@ db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
 // open the connection to mongo
-db.on('open' , ()=>{});
+db.on('open' , ()=>{
+  console.log('connected to mongo');
+});
 
 // Middleware- after config and dependencies but bedore routes
 // use public folder for static asses, like css
@@ -36,12 +40,9 @@ app.use(express.urlencoded({extended:false}))
 // use PUT and DELETE verbs (HTML only allows GET and POST)
 app.use(methodOverride('_method'))
 
+// middleware for postcardsController
+app.use('/postcards', postcardsController)
 
-// Routes
-// index
-app.get('/', (req, res)=>{
-  res.render('index.ejs')
-})
 
 // Listen
 app.listen(PORT, ()=>{

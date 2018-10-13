@@ -5,6 +5,24 @@
     <title></title>
   </head>
   <body>
-    HELLO WORLD
+
+    <a href="/postcards/new">Create New Postcard</a>
+    <h2>Click on an image to begin creating your postcard!</h2>
+
+    <div class="container">
+      <div class="card">
+        <ul>
+          <% for (let i=0; i < postcards.length; i++) { %>
+            <li>
+
+              <a href="/postcards/<%#=postcards[i].id%>"><%=postcards[i].frontImage%></a>
+
+            </li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+
+
   </body>
 </html>

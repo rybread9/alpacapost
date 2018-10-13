@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Customize Your Postcard</h1>
+        <form action="/postcards" method="POST">
+            Front Image: <input type="img" name="frontImage" placeholder="image URL"/><br/>
+            Dear: <input type="text" name="sendToName" placeholder="receiver's name here"/><br/>
+            <!-- Send To: <input type="email" name="sendToEmail" placeholder="receiver's email here"/><br/> -->
+            Message: <input type="text" name="message" placeholder="Life is good on the road..."/><br/>
+            From: <input type="text" name="sendFromName" placeholder="your name here"/><br/>
+            <input type="submit" value="Create Postcard"/>
+        </form>
+  </body>
+</html>
