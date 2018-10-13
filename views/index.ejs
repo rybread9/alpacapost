@@ -6,7 +6,7 @@
   </head>
   <body>
 
-    <a href="/postcards/new">Create New Postcard</a>
+    <a href="/alpacapost/new">Create New Postcard</a>
     <h2>Click on an image to begin creating your postcard!</h2>
 
     <div class="container">
@@ -15,7 +15,7 @@
           <% for (let i=0; i < postcards.length; i++) { %>
             <li>
 
-              <a href="/postcards/<%#=postcards[i].id%>"><%=postcards[i].frontImage%></a>
+              <a href="/alpacapost/<%=i%>"><img src="<%=postcards[i].frontImage%>"></a>
 
             </li>
           <% } %>

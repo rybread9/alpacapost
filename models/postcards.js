@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const postcardSchema = mongoose.Schema ({
+const postcardSchema = new mongoose.Schema ({
   frontImage: String,
   backImage: String,
   sendToName: String,
@@ -11,4 +11,4 @@ const postcardSchema = mongoose.Schema ({
 
 const Postcards = mongoose.model('Postcards', postcardSchema);
 
-module.exports = Postcards;
+module.exports = Postcard;
