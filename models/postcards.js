@@ -9,6 +9,6 @@ const postcardSchema = new mongoose.Schema ({
   sendFromName: String
 })
 
-const Postcards = mongoose.model('Postcards', postcardSchema);
+const Postcard = mongoose.model('Postcard', postcardSchema);
 
 module.exports = Postcard;

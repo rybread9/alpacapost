@@ -1,10 +1,12 @@
 // Dependencies
 const express = require('express')
 // const methodOverride = require('method-override')
-// const mongoose = require('mongoose')
+const mongoose = require('mongoose')
 const app = express()
-// const db = mongoose.connection
+const db = mongoose.connection
+const Postcard = require('./models/postcards.js')
 const postcards = require('./models/seed.js')
+
 
 // Controller Middleware
 // const postcardsController = require('./controllers/postcards.js')
@@ -15,20 +17,20 @@ const postcards = require('./models/seed.js')
 const PORT = process.env.PORT || 3000
 
 // Database
-// const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'alpacapost'
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'alpacapost'
 
 // // Connect to Mongo
-// mongoose.connect(MONGODB_URI, {useNewUrlParser: true})
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true})
 //
-// // Error / success
-// db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
-// db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
-// db.on('disconnected', () => console.log('mongo disconnected'));
-//
-// // open the connection to mongo
-// db.on('open' , ()=>{
-//   console.log('connected to mongo');
-// });
+// Error / success
+db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
+db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
+db.on('disconnected', () => console.log('mongo disconnected'));
+
+// open the connection to mongo
+db.on('open' , ()=>{
+  console.log('connected to mongo');
+});
 
 // Middleware- after config and dependencies but bedore routes
 // use public folder for static asses, like css
@@ -55,23 +57,25 @@ app.get('/alpacapost', (req, res)=>{
 // require seed data
 // const seed = require('./models/seed.js');
 
-// SEED ROUTE
-app.get('/alpacapost/seed', (req, res)=>{
- res.send('this is your seed data')
-})
-
-// new
-app.get('/new', (req, res)=>{
-  res.render('new.ejs')
-})
+// // SEED ROUTE
+// app.get('/alpacapost/seed', (req, res)=>{
+//  res.send('this is your seed data')
+// })
 
 // create postcard
-app.post('/', (req, res)=>{
+app.post('/alpacapost', (req, res)=>{
   Postcard.create(req.body, (error, createdPostcard)=>{
-    res.redirect('/alpaca')
+    res.redirect('/alpacapost')
     // res.send('you created a thing!')
   })
 })
+
+// new
+app.get('/alpacapost/new', (req, res)=>{
+  res.render('new.ejs')
+})
+
+
 
 
 
