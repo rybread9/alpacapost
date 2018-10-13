@@ -75,6 +75,13 @@ app.get('/alpacapost/:id', (req, res)=>{
   })
 })
 
+// DELETE ROUTE
+app.delete('/alpacapost/:id', (req, res)=>{
+  Postcard.findByIdAndRemove(req.params.id, (err, data)=>{
+    res.redirect('/alpacapost');//redirect back to store index
+  })
+});
+
 // edit route
 app.get('/alpacapost/:id/edit', (req, res)=>{
   Postcard.findById(req.params.id, (err, foundPostcard)=>{
