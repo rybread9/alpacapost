@@ -2,23 +2,14 @@
 <html lang="en" dir="ltr">
   <head>
     <% include ./partials/head.ejs %>
-      <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body>
-    <style>
-      img {
-        height: 300px;
-        width: auto;
-      }
-    </style>
-    <header class="jumbotron">
-      <h1>alpacaPost</h1>
-      <nav>
-        <a href="/alpacapost/new">Create New Postcard</a>
-      </nav>
-    </header>
+    <% include ./partials/header.ejs %>
+    <div class="above">
+      <h2>Click on an image to begin creating your postcard.</h2>
+      <a href="/alpacapost/new">Create New Postcard</a>
+    </div>
 
-    <h2>Click on an image to begin creating your postcard!</h2>
     <div class="container-fluid">
       <!-- container for all images -->
       <div class="allImageContainer">
