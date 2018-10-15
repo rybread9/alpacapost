@@ -3,6 +3,7 @@ const express = require('express')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 const app = express()
+const session = require('express-session')
 const db = mongoose.connection
 // Port
 // Allow use of Heroku's port or your own local port, depending on your environment
@@ -27,6 +28,11 @@ app.use(express.urlencoded({extended:false}))
 // postcards controller middleware
 app.use('/alpacapost', postcardsController)
 
+app.use(session({
+  secret: "tinydeerface".
+  resave: false,
+  saveUninitialized: false
+}))
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
