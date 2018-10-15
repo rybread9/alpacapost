@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <% include ./partials/head.ejs %>
+      <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body>
+    <style>
+      img {
+        height: 300px;
+        width: auto;
+      }
+    </style>
+    <header class="jumbotron">
+      <h1>alpacaPost</h1>
+      <nav>
+        <a href="/alpacapost/new">Create New Postcard</a>
+      </nav>
+    </header>
 
-    <a href="/alpacapost/new">Create New Postcard</a>
     <h2>Click on an image to begin creating your postcard!</h2>
+    <div class="container-fluid">
+      <!-- container for all images -->
+      <div class="allImageContainer">
+        <!-- break images up into rows -->
+        <div class="row ">
 
-    <div class="container">
-      <div class="card">
-        <ul>
           <% for (let i=0; i < postcards.length; i++) { %>
-            <li>
+            <!-- break images up into columns of 4 -->
+            <div class="column-sm-4">
+              <!-- make the image a link that goes to the show page of the postcard -->
+              <a class="cardlink" href="/alpacapost/<%=postcards[i].id%>"><img  class="cardimg" src="<%=postcards[i].frontImage%>"></a>
 
-              <a href="/alpacapost/<%=postcards[i].id%>"><img src="<%=postcards[i].frontImage%>"></a>
-
-            </li>
+            </div>
           <% } %>
-        </ul>
+
+        </div>
+
       </div>
     </div>
+
 
 
   </body>

@@ -1,0 +1,30 @@
+.jumbotron {
+  background-color: rgba(100, 1, 226, 0.67);
+}
+.container-fluid {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-wrap: row wrap;
+  justify-content: center;
+}
+.allImageContainer {
+  margin-left: 50px;
+}
+.card {
+  margin: 10px;
+  height: 200px;
+  width: 300px;
+  /* border: none; */
+
+}
+.cardimg {
+  height: 200px;
+  width: 300px;
+  object-fit: cover;
+  margin: 5px;
+}
+.cardlink {
+  height: 200px;
+  width: 300px;
+}
