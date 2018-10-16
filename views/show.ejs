@@ -11,19 +11,27 @@
     <header class="jumbotron">
       <% include ./partials/header.ejs %>
     </header>
-    <div class="container">
-      <div class="card">
+    <div class="container-fluid">
+      <div class="showcard">
 
         <div class="images">
           <img class="showimg" src="../<%= postcard.frontImage %>" />
-          <img class="showimg" src="<%= postcard.backImage %>" />
         </div>
 
-        <a href="/alpacapost/<%= postcard.id %>/edit">EDIT</a>
+        <div class="message">
+          <p>
+            <%= postcard.message %>
+          </p>
+        </div>
 
-        <form action="/alpacapost/<%=postcard.id%>?_method=DELETE" method="POST">
-          <input type="submit" value="DELETE" />
-        </form>
+        <div class="aside">
+          <a href="/alpacapost/<%= postcard.id %>/edit">EDIT</a>
+
+          <form action="/alpacapost/<%=postcard.id%>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE" />
+          </form>
+        </div>
+
 
       </div>
     </div>
