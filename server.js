@@ -4,6 +4,7 @@ const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 const app = express()
 const session = require('express-session')
+const User = require('./models/users.js')
 const db = mongoose.connection
 // Port
 // Allow use of Heroku's port or your own local port, depending on your environment
@@ -12,10 +13,14 @@ const PORT = process.env.PORT || 3000
 const Postcard = require('./models/postcards.js')
 // require the seed data
 const postcards = require('./models/seed.js')
+
+
+// require sessions controller
+const sessionsController = require('./controllers/sessions.js')
+// require users controller
+const userController = require('./controllers/users.js')
 //Require Postcards Controller
 const postcardsController = require('./controllers/postcards.js')
-
-
 
 // Middleware- after config and dependencies but bedore routes
 // use method override
@@ -25,14 +30,18 @@ app.use(methodOverride('_method'))
 app.use(express.static('public'))
 // populates req.body with parsed info from forms, if no data from forms, it will return an empty object
 app.use(express.urlencoded({extended:false}))
-// postcards controller middleware
-app.use('/alpacapost', postcardsController)
 
+// session middleware
 app.use(session({
-  secret: "tinydeerface".
+  secret: "tinydeerface",
   resave: false,
   saveUninitialized: false
 }))
+
+app.use('/users', userController)
+app.use('/sessions', sessionsController)
+// postcards controller middleware
+app.use('/alpacapost', postcardsController)
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));

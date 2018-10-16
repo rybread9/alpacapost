@@ -2,13 +2,48 @@
 <html lang="en" dir="ltr">
   <head>
     <% include ./partials/head.ejs %>
-    <title>alpacaPost</title>
   </head>
   <body>
-    <% include ./partials/header.ejs %>
+
+    <header class="jumbotron">
+      <% include ./partials/header.ejs %>
+      <nav>
+        <ul>
+          <!-- FOR LOGGED IN USERS -->
+          <% if(currentUser){%>
+            <!-- create new postcard -->
+            <li> <a href="/alpacapost/new">Create New Postcard</a> </li>
+            <!-- log out -->
+            <li>
+              <form action="/sessions?_method=DELETE" method="POST">
+                <input type="submit" name="" value="Logout" />
+              </form>
+            </li>
+            <!-- FOR USERS NOT LOGGED IN -->
+          <% } else { %>
+            <!-- login -->
+            <li> <a href="/sessions/new">Log In</a> </li>
+            <!-- create new user -->
+            <li> <a href="/users/new">Register</a> </li>
+          <% } %>
+
+        </ul>
+      </nav>
+    </header>
     <div class="above">
-      <h2>Click on an image to begin creating your postcard.</h2>
-      <a href="/alpacapost/new">Create New Postcard</a>
+
+      <h2>
+        <!-- greet user or ask to make account -->
+        <% if(currentUser){%>
+          Welcome <%=currentUser.username%>!
+          <h2>Click on an image to begin creating your postcard.</h2>
+
+        <% } else { %>
+          Welcome! Please sign in or register to begin sending postcards.
+        <% } %>
+      </h2>
+
+
     </div>
 
     <div class="container-fluid">

@@ -5,6 +5,7 @@ const alpacapost = express.Router();
 const Postcard = require('../models/postcards.js');
 // require seed data
 const postcards = require('../models/seed.js')
+const User = require('../models/users.js')
 
 
 // index
@@ -14,7 +15,8 @@ alpacapost.get('/', (req, res)=>{
     // render index page
     res.render('index.ejs', {
       // passes found postcards to index page
-      postcards: allPostcards
+      postcards: allPostcards,
+      currentUser: req.session.currentUser
     })
   })
 })
@@ -42,6 +44,7 @@ alpacapost.get('/new', (req, res)=>{
 
 // show
 alpacapost.get('/:id', (req, res)=>{
+  req.body.author = req.session.currentUser.username;
   Postcard.findById(req.params.id, (err, foundPostcard)=>{
     res.render('show.ejs',
     {
