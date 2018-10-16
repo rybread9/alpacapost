@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const app = express()
 const session = require('express-session')
 const User = require('./models/users.js')
+const dotenv = require('dotenv').config()
 const db = mongoose.connection
 // Port
 // Allow use of Heroku's port or your own local port, depending on your environment

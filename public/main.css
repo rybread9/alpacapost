@@ -9,6 +9,9 @@
   font-family: 'Inconsolata', monospace;
   letter-spacing: 3px;
 } */
+/* ul {
+  display: inline-block;
+} */
 li {
   text-decoration: none;
   list-style: none;
