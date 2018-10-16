@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <% include ./partials/head.ejs %>
   </head>
   <body>
+    <% include ./partials/header.ejs %>
     <h1>Create Your Postcard</h1>
-        <form action="/alpacapost" method="POST">
-            Front Image: <input type="img" name="frontImage" placeholder="image URL"/><br/>
-            Dear: <input type="text" name="sendToName" placeholder="receiver's name here"/><br/>
-            <!-- Send To: <input type="email" name="sendToEmail" placeholder="receiver's email here"/><br/> -->
-            Message: <input type="text" name="message" placeholder="Life is good on the road..."/><br/>
-            From: <input type="text" name="sendFromName" placeholder="your name here"/><br/>
-            <input type="submit" value="Create Postcard"/>
-        </form>
+    <div class="container">
+      <form action="/alpacapost" method="POST">
+          Front Image: <input type="img" name="frontImage" placeholder="image URL"/><br/>
+          Dear: <input type="text" name="sendToName" placeholder="receiver's name here"/><br/>
+          <!-- Send To: <input type="email" name="sendToEmail" placeholder="receiver's email here"/><br/> -->
+          Message: <input type="text" name="message" placeholder="Life is good on the road..."/><br/>
+          From: <input type="text" name="sendFromName" placeholder="your name here"/><br/>
+          <input type="submit" value="Create Postcard"/>
+      </form>
+    </div>
+
+
   </body>
 </html>

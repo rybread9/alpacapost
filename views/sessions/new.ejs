@@ -4,7 +4,12 @@
     <% include ../partials/head.ejs %>
   </head>
   <body>
-    <% include ../partials/header.ejs %>
+    <header class="jumbotron">
+      <h1>alpacaPost</h1>
+      <nav>
+        <a href="/alpacapost">Home</a>
+      </nav>
+    </header>
     <h1>Sign In</h1>
       <form action="/sessions" method="POST">
           <input type="text" name="username" placeholder="username"/>

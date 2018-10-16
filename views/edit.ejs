@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <% include ./partials/head.ejs %>
   </head>
   <body>
+    <header>
+      <% include ./partials/header.ejs %>
+    </header>
     <form action="/alpacapost/<%=postcard.id%>?_method=PUT" method="POST">
         Front Image: <input type="img" name="frontImage" value="<%=postcard.frontImage%>"/><br/>
         Dear: <input type="text" name="sendToName" placeholder="receiver's name here"/><br/>

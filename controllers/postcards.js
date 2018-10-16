@@ -39,16 +39,20 @@ alpacapost.post('/', (req, res)=>{
 
 // new
 alpacapost.get('/new', (req, res)=>{
-  res.render('new.ejs')
+  res.render('new.ejs', {
+    currentUser: req.session.currentUser
+
+  })
 })
 
 // show
 alpacapost.get('/:id', (req, res)=>{
-  req.body.author = req.session.currentUser.username;
+  // req.body.author = req.session.currentUser.username;
   Postcard.findById(req.params.id, (err, foundPostcard)=>{
     res.render('show.ejs',
     {
-      postcard: foundPostcard
+      postcard: foundPostcard,
+      currentUser: req.session.currentUser
       // postcard: postcards[req.params.id],
       // index: [req.params.id]
     })
@@ -67,7 +71,8 @@ alpacapost.get('/:id/edit', (req, res)=>{
   Postcard.findById(req.params.id, (err, foundPostcard)=>{
     res.render('edit.ejs', {
       // postcard: postcards[req.params.id]
-      postcard: foundPostcard
+      postcard: foundPostcard,
+      currentUser: req.session.currentUser
     })
   })
 })
