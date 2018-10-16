@@ -33,7 +33,7 @@ app.use(express.urlencoded({extended:false}))
 
 // session middleware
 app.use(session({
-  secret: "tinydeerface",
+  secret: process.env.PORT,
   resave: false,
   saveUninitialized: false
 }))

@@ -9,6 +9,14 @@
   font-family: 'Inconsolata', monospace;
   letter-spacing: 3px;
 } */
+li {
+  text-decoration: none;
+  list-style: none;
+}
+li > a {
+  color: rgba(100, 1, 226, 0.67);
+
+}
 .above {
   text-align: center;
   color: rgba(100, 1, 226, 0.67);
