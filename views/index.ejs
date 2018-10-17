@@ -15,10 +15,11 @@
         <!-- greet user or ask to make account -->
         <% if(currentUser){%>
           Welcome <%=currentUser.username%>!
-          <h2>Click on an image to begin creating your postcard.</h2>
+          <h2>Click on an image to begin.</h2>
 
         <% } else { %>
-          Welcome! Please sign in or register to begin sending postcards.
+          Welcome!
+          <h2>Please sign in or register to begin.</h2>
         <% } %>
       </h2>
 

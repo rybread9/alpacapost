@@ -8,6 +8,7 @@ const postcards = require('../models/seed.js')
 const User = require('../models/users.js')
 
 
+
 // index
 alpacapost.get('/', (req, res)=>{
   // find all postcards
@@ -21,6 +22,13 @@ alpacapost.get('/', (req, res)=>{
   })
 })
 
+// about get route
+alpacapost.get('/about', (req, res)=>{
+  // res.send('ABOUT');
+  res.render('about.ejs', {
+    currentUser: req.session.currentUser
+  })
+})
 
 // SEED ROUTE
 alpacapost.get('/seed', (req, res)=>{
@@ -37,6 +45,8 @@ alpacapost.post('/', (req, res)=>{
   })
 })
 
+
+
 // new
 alpacapost.get('/new', (req, res)=>{
   res.render('new.ejs', {
@@ -44,6 +54,8 @@ alpacapost.get('/new', (req, res)=>{
 
   })
 })
+
+
 
 // show
 alpacapost.get('/:id', (req, res)=>{
@@ -59,12 +71,16 @@ alpacapost.get('/:id', (req, res)=>{
   })
 })
 
+
+
 // DELETE ROUTE
 alpacapost.delete('/:id', (req, res)=>{
   Postcard.findByIdAndRemove(req.params.id, (err, data)=>{
     res.redirect('/alpacapost');//redirect back to store index
   })
 });
+
+
 
 // edit route
 alpacapost.get('/:id/edit', (req, res)=>{
@@ -76,6 +92,8 @@ alpacapost.get('/:id/edit', (req, res)=>{
     })
   })
 })
+
+
 
 // Update edit put route
 alpacapost.put('/:id', (req, res)=>{

@@ -43,7 +43,7 @@ nav {
   font-family: 'Inconsolata', monospace;
   letter-spacing: 2px;
   font-weight: bolder;
-  margin-right: 25px;
+  margin-right: 70px;
 }
 .navlink:hover{
   cursor: pointer;
@@ -58,6 +58,7 @@ nav {
 
 /* INDEX PAGE */
 .above {
+  margin: auto;
   margin-top: 30px;
   text-align: center;
   font-size: 40px;
@@ -65,22 +66,22 @@ nav {
   margin-bottom: 25px;
   font-family: 'Quicksand', sans-serif;
 }
-.above > a {
+/* .above > a {
   font-weight: bolder;
   font-size: 22px;
   color: rgba(100, 1, 226, 0.67);
   letter-spacing: normal;
   font-weight: bolder;
+} */
+.allImageContainer {
+  margin: 0 auto;
 }
 .container-fluid {
-  margin: 0 auto;
-  width: 90vw;
+  margin-left: 100px;
+  width: 95vw;
   display: flex;
   flex-wrap: row wrap;
   justify-content: center;
-}
-.allImageContainer {
-  margin-left: 0 auto;
 }
 .card {
   margin: 10px;
@@ -160,6 +161,7 @@ img {
   text-decoration: none;
   border: 1px solid white;
   font-weight: bold;
+  color: white;
 }
 /* EDIT PAGE */
 .editcard {
@@ -184,5 +186,10 @@ img {
 }
 .newlink {
   margin-top: 20px;
+}
+.about-content {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0 auto;
+  width: 80%;
 }
 /* ALL PHOTOS COURTESY OF UNSPLASH.COM */
