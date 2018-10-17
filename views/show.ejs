@@ -19,24 +19,32 @@
         </div>
         <!-- image and links to right -->
         <div class="showright">
-          <div class="message">
-            <label for="message">Your message here: </label>
+          <label for="message">Your message here: </label>
+          <div class="messagebox">
+
             <p>
               <%= postcard.message %>
             </p>
-          </div>
 
+          </div>
+          <label for="from">From: </label>
+          <p><%= postcard.sendFromName%></p>
+          <br/>
           <div class="bottom">
             <a class="showlink btn" href="/alpacapost/<%= postcard.id %>/edit">EDIT</a>
 
             <form class="showlink" action="/alpacapost/<%=postcard.id%>?_method=DELETE" method="POST">
               <input class="showlink" type="submit" value="DELETE" />
             </form>
+
+            <a class="showlink btn" href="mailto:<%= postcard.sendToEmail %>">SEND</a>
           </div>
         </div>
 
       </div>
     </div>
 
+
   </body>
+  <% include ./partials/footer.ejs %>
 </html>

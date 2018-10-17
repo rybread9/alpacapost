@@ -11,7 +11,7 @@
     <div class="above">
       Edit your postcard.
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid edit-container">
       <div class="editcard">
         <!-- SHOW IMAGE ON LEFT -->
         <div class="images">
@@ -20,13 +20,13 @@
         <!-- SHOW EDIT FORM ON RIGHT -->
         <div class="form">
           <form class="editright" action="/alpacapost/<%=postcard.id%>?_method=PUT" method="POST">
-            <div class="form-group">
+            <div class="form-group edit-form">
               <!-- edit front image path -->
               <label for="front image">Front Image: </label>
               <input class="form-control" type="img" name="frontImage" value="<%=postcard.frontImage%>"/><br/>
               <!-- edit message -->
               <label for="message">Message: </label>
-              <input class="form-control" type="textarea" name="message" placeholder="Life is good on the road..."/><br/>
+              <textarea class="form-control" type="textarea" name="message" placeholder="Life is good on the road..."></textarea><br/>
               <!-- edit send to -->
               <label for="send to">Send To: </label>
               <input class="form-control" type="email" name="sendToEmail" placeholder="email here"/><br/>
@@ -34,15 +34,13 @@
               <label for="from">From: </label>
               <input class="form-control" type="text" name="sendFromName" placeholder="your name here"/><br/>
               <!-- submit button -->
-              <input class="showlink" type="submit" value="Submit Edit"/>
+              <input class="showlink" type="submit" value="SUBMIT"/>
             </div>
           </form>
         </div>
 
       </div>
     </div>
-
-
-  </form>
+  <% include ./partials/footer.ejs %>
   </body>
 </html>

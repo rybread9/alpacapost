@@ -2,8 +2,11 @@
   <div class="nav left">
     <!-- FOR LOGGED IN USERS -->
     <% if(currentUser){%>
+      <!-- home link -->
+      <a class="navlink" href="/alpacapost">HOME</a>
       <!-- create new postcard -->
       <a class="navlink" href="/alpacapost/new">CREATE</a>
+      <!-- about page link -->
       <a class="navlink" href="/alpacapost/about">ABOUT</a>
   </div>
   <div class="nav right">
@@ -15,6 +18,12 @@
     <!-- FOR USERS NOT LOGGED IN -->
   <% } else { %>
     <!-- login -->
+    <div class="left">
+      <!-- home link -->
+      <a class="navlink" href="/alpacapost">HOME</a>
+      <!-- about page link -->
+      <a class="navlink" href="/alpacapost/about">ABOUT</a>
+    </div>
     <div class="nav right">
       <a class="navlink" href="/sessions/new">LOG IN</a>
       <!-- create new user -->
