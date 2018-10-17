@@ -13,11 +13,14 @@
     </div>
     <div class="form newsession">
       <form action="/users" method="POST">
-        <label for="username">Username: </label>
-        <input class="form-control" type="text" name="username" placeholder="username"/>
-        <label for="password">Password: </label>
-        <input class="form-control" type="password" name="password" placeholder="password"/>
-        <input class="form-control showlink newlink" type="submit" value="Create User" />
+        <div class="form-group">
+          <label for="username">Username: </label>
+          <input class="form-control" type="text" name="username" placeholder="username"/>
+          <label for="password">Password: </label>
+          <input class="form-control" type="password" name="password" placeholder="password"/>
+          <input class="form-control showlink newlink" type="submit" value="Create User" />
+        </div>
+
       </form>
     </div>
     <% include ../partials/footer.ejs %>
