@@ -9,27 +9,31 @@
     </header>
     <% include ./partials/nav.ejs%>
 
-    <div class="container-fluid">
-      <div class="showcard">
 
+    <div class="container-fluid">
+      <!-- contains all page content -->
+      <div class="showcard">
+        <!-- postcard image on left -->
         <div class="images">
           <img class="showimg" src="../<%= postcard.frontImage %>" />
         </div>
+        <!-- image and links to right -->
+        <div class="showright">
+          <div class="message">
+            <label for="message">Your message here: </label>
+            <p>
+              <%= postcard.message %>
+            </p>
+          </div>
 
-        <div class="message">
-          <p>
-            <%= postcard.message %>
-          </p>
+          <div class="bottom">
+            <a class="showlink btn" href="/alpacapost/<%= postcard.id %>/edit">EDIT</a>
+
+            <form class="showlink" action="/alpacapost/<%=postcard.id%>?_method=DELETE" method="POST">
+              <input class="showlink" type="submit" value="DELETE" />
+            </form>
+          </div>
         </div>
-
-        <div class="bottom">
-          <a class="showlink" href="/alpacapost/<%= postcard.id %>/edit">EDIT</a>
-
-          <form class="bottom" action="/alpacapost/<%=postcard.id%>?_method=DELETE" method="POST">
-            <input class="showlink" type="submit" value="DELETE" />
-          </form>
-        </div>
-
 
       </div>
     </div>

@@ -8,17 +8,29 @@
       <% include ./partials/header.ejs %>
     </header>
     <% include ./partials/nav.ejs%>
+    <div class="above">
+      Create a Postcard.
+    </div>
 
-    <h1>Create Your Postcard</h1>
-    <div class="container">
-      <form action="/alpacapost" method="POST">
-          Front Image: <input type="img" name="frontImage" placeholder="image URL"/><br/>
-          Dear: <input type="text" name="sendToName" placeholder="receiver's name here"/><br/>
-          <!-- Send To: <input type="email" name="sendToEmail" placeholder="receiver's email here"/><br/> -->
-          Message: <input type="text" name="message" placeholder="Life is good on the road..."/><br/>
-          From: <input type="text" name="sendFromName" placeholder="your name here"/><br/>
-          <input type="submit" value="Create Postcard"/>
-      </form>
+    <div class="container-fluid">
+      <div class="editcard">
+        <div class="form">
+          <form action="/alpacapost" method="POST">
+              <label for="front image">Front Image: </label>
+              <input class="form-control" type="file" accept="images/*" name="frontImage" placeholder="image URL"/><br/>
+              <!-- Send To: <input type="email" name="sendToEmail" placeholder="receiver's email here"/><br/> -->
+              <label for="message">Message: </label>
+              <input class="form-control" type="text" name="message" placeholder="Life is good on the road..."/><br/>
+              <label for="send to">Send To: </label>
+              <input class="form-control" type="mailto" name="sendToEmail" placeholder="email here"/><br/>
+              <label for="from">From: </label>
+              <input class="form-control" type="text" name="sendFromName" placeholder="your name here"/><br/>
+              <input class="showlink" type="submit" value="Create Postcard"/>
+          </form>
+        </div>
+
+      </div>
+
     </div>
 
 

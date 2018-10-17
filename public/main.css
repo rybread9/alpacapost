@@ -58,6 +58,7 @@ nav {
 
 /* INDEX PAGE */
 .above {
+  margin-top: 30px;
   text-align: center;
   font-size: 40px;
   color: rgba(100, 1, 226, 0.67);
@@ -79,8 +80,7 @@ nav {
   justify-content: center;
 }
 .allImageContainer {
-
-  margin-left: 50px;
+  margin-left: 0 auto;
 }
 .card {
   margin: 10px;
@@ -96,10 +96,10 @@ nav {
   margin: 5px;
 }
 img {
-  height: 60vw;
-  width: 80vw;
-  /* height: 200px;
-  width: 300px; */
+  /* height: 40vw;
+  width: 60vw; */
+  height: 200px;
+  width: 300px;
   object-fit: cover;
   margin: 5px;
 }
@@ -112,23 +112,43 @@ img {
 }
 
 /* SHOW PAGE */
+
 .showcard {
   margin-top: 40px;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .showimg {
   height: 400px;
   width: 500px;
+  border: 7px inset black;
+}
+.showright{
+  margin-top: 30px;
+  margin-left: 30px;
+  width: 70%;
 }
 .message {
+
+}
+.message > p {
   font-family: 'Inconsolata', monospace;
   font-size: 20px;
   text-align: center;
   border: 2px solid black;
+  min-width: 400px;
+  min-height: 200px;
 }
 .showlink {
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  line-height: 28px;
+  height: 45px;
+  width: 100%;
   border: none;
-  background-color: inherit;
+  background-color: black;
   color: rgba(188, 147, 241, 1);
   font-family: 'Inconsolata', monospace;
   letter-spacing: 2px;
@@ -142,8 +162,27 @@ img {
   font-weight: bold;
 }
 /* EDIT PAGE */
-.form {
-  width: 60vw;
-  margin-left: 250px;
-  margin-top: 50px;
+.editcard {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 30px;
 }
+.form {
+  margin-left: 50px;
+  margin-top: 0;
+  width: 700px;
+}
+
+.editright {
+  /* margin-top: 80px; */
+  /* margin-left: 30px; */
+}
+.newsession {
+  margin: 0 auto;
+}
+.newlink {
+  margin-top: 20px;
+}
+/* ALL PHOTOS COURTESY OF UNSPLASH.COM */
