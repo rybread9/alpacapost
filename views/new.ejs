@@ -4,7 +4,11 @@
     <% include ./partials/head.ejs %>
   </head>
   <body>
-    <% include ./partials/header.ejs %>
+    <header>
+      <% include ./partials/header.ejs %>
+    </header>
+    <% include ./partials/nav.ejs%>
+
     <h1>Create Your Postcard</h1>
     <div class="container">
       <form action="/alpacapost" method="POST">

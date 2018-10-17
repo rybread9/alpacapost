@@ -1,0 +1,26 @@
+<nav>
+  <div class="nav left">
+    <!-- FOR LOGGED IN USERS -->
+    <% if(currentUser){%>
+      <!-- create new postcard -->
+      <a class="navlink" href="/alpacapost/new">CREATE</a>
+      <a class="navlink" href="">ABOUT</a>
+  </div>
+  <div class="nav right">
+    <!-- log out -->
+    <form  action="/sessions?_method=DELETE" method="POST">
+      <input class="navlink" type="submit" name="" value="LOG OUT" />
+    </form>
+
+    <!-- FOR USERS NOT LOGGED IN -->
+  <% } else { %>
+    <!-- login -->
+    <div class="nav right">
+      <a class="navlink" href="/sessions/new">LOG IN</a>
+      <!-- create new user -->
+      <a class="navlink" href="/users/new">REGISTER</a>
+    </div>
+  <% } %>
+  </div>
+
+</nav>

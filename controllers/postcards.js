@@ -81,7 +81,8 @@ alpacapost.get('/:id/edit', (req, res)=>{
 alpacapost.put('/:id', (req, res)=>{
   Postcard.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedPostcard)=>{
     res.render('show.ejs', {
-      postcard: updatedPostcard
+      postcard: updatedPostcard,
+      currentUser: req.session.currentUser
     })
   })
 })

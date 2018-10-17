@@ -5,7 +5,9 @@ const User = require('../models/users.js')
 
 // takes you to sign in page
 sessions.get('/new', (req, res)=>{
-  res.render('sessions/new.ejs')
+  res.render('sessions/new.ejs', {
+    currentUser: req.session.currentUser
+  })
   // res.send('new sessions page')
 })
 
@@ -38,6 +40,7 @@ sessions.post('/', (req, res)=>{
 sessions.delete('/', (req, res)=>{
   req.session.destroy(()=>{
     res.redirect('/alpacapost');
+    currentUser: req.session.currentUser
   })
 })
 

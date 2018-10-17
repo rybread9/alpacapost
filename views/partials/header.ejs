@@ -1,24 +1,2 @@
-
-  <h1>alpacaPost</h1>
-  <nav>
-    <ul>
-      <!-- FOR LOGGED IN USERS -->
-      <% if(currentUser){%>
-        <!-- create new postcard -->
-        <li> <a href="/alpacapost/new">Create New Postcard</a> </li>
-        <!-- log out -->
-        <li>
-          <form action="/sessions?_method=DELETE" method="POST">
-            <input type="submit" name="" value="Logout" />
-          </form>
-        </li>
-        <!-- FOR USERS NOT LOGGED IN -->
-      <% } else { %>
-        <!-- login -->
-        <li> <a href="/sessions/new">Log In</a> </li>
-        <!-- create new user -->
-        <li> <a href="/users/new">Register</a> </li>
-      <% } %>
-
-    </ul>
-  </nav>
+  <img src="/images/alpaca.png" alt=""></br>
+  <a href="/alpacapost"><h1>alpacaPost</h1></a>

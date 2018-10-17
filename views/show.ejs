@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-
     <% include ./partials/head.ejs %>
-
-    <title>alpacaPost</title>
-
   </head>
   <body>
-    <header class="jumbotron">
+    <header>
       <% include ./partials/header.ejs %>
     </header>
+    <% include ./partials/nav.ejs%>
+
     <div class="container-fluid">
       <div class="showcard">
 
@@ -24,11 +22,11 @@
           </p>
         </div>
 
-        <div class="aside">
-          <a href="/alpacapost/<%= postcard.id %>/edit">EDIT</a>
+        <div class="bottom">
+          <a class="showlink" href="/alpacapost/<%= postcard.id %>/edit">EDIT</a>
 
-          <form action="/alpacapost/<%=postcard.id%>?_method=DELETE" method="POST">
-            <input type="submit" value="DELETE" />
+          <form class="bottom" action="/alpacapost/<%=postcard.id%>?_method=DELETE" method="POST">
+            <input class="showlink" type="submit" value="DELETE" />
           </form>
         </div>
 

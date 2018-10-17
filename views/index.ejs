@@ -5,10 +5,10 @@
   </head>
   <body>
 
-    <header class="jumbotron">
+    <header>
       <% include ./partials/header.ejs %>
-
     </header>
+    <% include ./partials/nav.ejs%>
     <div class="above">
 
       <h2>
@@ -35,8 +35,11 @@
             <!-- break images up into columns of 4 -->
             <div class="column-sm-4">
               <!-- make the image a link that goes to the show page of the postcard -->
+              <% if(currentUser){%>
               <a class="cardlink" href="/alpacapost/<%=postcards[i].id%>"><img  class="cardimg" src="<%=postcards[i].frontImage%>"></a>
-
+              <% } else { %>
+              <img src="<%=postcards[i].frontImage%>" alt="">
+              <% } %>
             </div>
           <% } %>
 
