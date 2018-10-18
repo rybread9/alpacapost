@@ -13,6 +13,7 @@ I officially began my career as a programmer only 6 weeks ago and have already c
 * EJS
 * Express Session
 * BCrypt
+* Bootstrap
 
 As someone who loves to travel, I thought it would be fun to make a website for sending postcards. I relish the tangibility and love that goes into a real postcard, however I have found that regular mail can be quite slow, especially when sending from a foreign country. On my website called alpacaPost, users can choose from an index of pre-loaded postcards that they can add a message to or they can upload their own photo to send.
 
