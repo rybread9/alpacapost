@@ -16,15 +16,20 @@
       <div class="editcard">
         <div class="form">
           <form action="/alpacapost" method="POST">
-              <label for="front image">Front Image: </label>
+              <!-- edit front image url -->
+              <label for="front image">Front Image URL: </label>
               <input class="form-control" type="img" name="frontImage" placeholder="image URL"/><br/>
               <!-- Send To: <input type="email" name="sendToEmail" placeholder="receiver's email here"/><br/> -->
+              <!-- edit message -->
               <label for="message">Message: </label>
               <input class="form-control" type="text" name="message" placeholder="Life is good on the road..."/><br/>
+              <!-- edit send to -->
               <label for="send to">Send To: </label>
               <input class="form-control" type="mailto" name="sendToEmail" placeholder="email here"/><br/>
+              <!-- edit send from -->
               <label for="from">From: </label>
               <input class="form-control" type="text" name="sendFromName" placeholder="your name here"/><br/>
+              <!-- submit edits -->
               <input class="showlink" type="submit" value="Create Postcard"/>
           </form>
         </div>
