@@ -9,7 +9,7 @@
     </header>
     <% include ./partials/nav.ejs%>
 
-    
+
 
     <div class="container-fluid">
       <!-- contains all page content -->
@@ -19,7 +19,10 @@
           <img class="showimg" src="<%= postcard.frontImage %>" />
         </div>
         <!-- image and links to right -->
+        <% if (postcard.message !== '') {%>
         <div class="showright">
+
+
           <label for="message">Your message here: </label>
           <div class="messagebox">
 
@@ -28,6 +31,7 @@
             </p>
 
           </div>
+
           <label for="from">From: </label>
           <p><%= postcard.sendFromName%></p>
           <br/>
@@ -41,6 +45,9 @@
             <a class="showlink btn" href="mailto:<%= postcard.sendToEmail %>">SEND</a>
           </div>
         </div>
+        <% } else { %>
+          <a class="showlink btn" href="/alpacapost/<%= postcard.id %>/edit">ADD MESSAGE</a>
+        <% } %>
 
       </div>
     </div>
