@@ -19,36 +19,45 @@
           <img class="showimg" src="<%= postcard.frontImage %>" />
         </div>
         <!-- image and links to right -->
-        <% if (postcard.message !== '') {%>
-        <div class="showright">
+        <% if(currentUser){%>
+          <% if (postcard.message !== '') {%>
+          <div class="showright">
 
 
-          <label for="message">Your message here: </label>
-          <div class="messagebox">
+            <label for="message">Your message here: </label>
+            <div class="messagebox">
 
-            <p>
-              <%= postcard.message %>
-            </p>
+              <p>
+                <%= postcard.message %>
+              </p>
 
+            </div>
+
+            <label for="from">From: </label>
+            <p><%= postcard.sendFromName%></p>
+            <br/>
+            <div class="bottom">
+              <a class="showlink btn" href="/alpacapost/<%= postcard.id %>/edit">EDIT</a>
+
+              <form class="showlink" action="/alpacapost/<%=postcard.id%>?_method=DELETE" method="POST">
+                <input class="showlink" type="submit" value="DELETE" />
+              </form>
+
+              <a class="showlink btn" href="mailto:<%= postcard.sendToEmail %>">SEND</a>
+            </div>
           </div>
+          <% } else { %>
+            <div>
+              <a class="showlink btn" href="/alpacapost/<%= postcard.id %>/edit">ADD MESSAGE</a>
+              <form class="showlink" action="/alpacapost/<%=postcard.id%>?_method=DELETE" method="POST">
+                <input class="showlink" type="submit" value="DELETE" />
+              </form>
+            </div>
 
-          <label for="from">From: </label>
-          <p><%= postcard.sendFromName%></p>
-          <br/>
-          <div class="bottom">
-            <a class="showlink btn" href="/alpacapost/<%= postcard.id %>/edit">EDIT</a>
-
-            <form class="showlink" action="/alpacapost/<%=postcard.id%>?_method=DELETE" method="POST">
-              <input class="showlink" type="submit" value="DELETE" />
-            </form>
-
-            <a class="showlink btn" href="mailto:<%= postcard.sendToEmail %>">SEND</a>
-          </div>
-        </div>
+          <% } %>
         <% } else { %>
-          <a class="showlink btn" href="/alpacapost/<%= postcard.id %>/edit">ADD MESSAGE</a>
+        <p>To begin sending postcards, please log in or register.</p>
         <% } %>
-
       </div>
     </div>
 

@@ -51,7 +51,6 @@ alpacapost.post('/', (req, res)=>{
 alpacapost.get('/new', (req, res)=>{
   res.render('new.ejs', {
     currentUser: req.session.currentUser
-
   })
 })
 
@@ -75,7 +74,7 @@ alpacapost.get('/:id', (req, res)=>{
 
 // DELETE ROUTE
 alpacapost.delete('/:id', (req, res)=>{
-  Postcard.findByIdAndRemove(req.params.id, (err, data)=>{
+  Postcard.findByIdAndDelete(req.params.id, (err, data)=>{
     res.redirect('/alpacapost');//redirect back to store index
   })
 });

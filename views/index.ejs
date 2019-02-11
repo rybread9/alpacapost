@@ -15,11 +15,11 @@
         <!-- greet user or ask to make account -->
         <% if(currentUser){%>
           Welcome <%=currentUser.username%>!
-          <h2>Click on an image to begin.</h2>
+          <h2>Click on an image to begin sending postcards.</h2>
 
         <% } else { %>
           Welcome!
-          <h2>Please sign in or register to begin.</h2>
+          <h2>Please sign in or register if you would like to begin sending postcards.</h2>
         <% } %>
       </h2>
 
@@ -36,11 +36,9 @@
             <!-- break images up into columns of 4 -->
             <div class="column-sm-4">
               <!-- make the image a link that goes to the show page of the postcard -->
-              <% if(currentUser){%>
+
               <a class="cardlink" href="/alpacapost/<%=postcards[i].id%>"><img  class="cardimg" src="<%=postcards[i].frontImage%>"></a>
-              <% } else { %>
-              <img src="<%=postcards[i].frontImage%>" alt="">
-              <% } %>
+              
             </div>
           <% } %>
 
