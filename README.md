@@ -1,10 +1,12 @@
 # alpacaPost
 
-[Go to alpacaPost](https://alpacapost.herokuapp.com/alpacapost)
+
 
 ![alpacaPost Logo](https://user-images.githubusercontent.com/42280967/47126101-d8fa8400-d23b-11e8-88a1-82c451dd8099.png)
 
 I officially began my career as a programmer only 6 weeks ago and have already created my very first full CRUD website. The requirements for the assignment were to make a website in which a user can create, read, update, and destroy an item. 
+
+[Go to alpacaPost](https://alpacapost.herokuapp.com/alpacapost)
 
 ### Technologies Used:
 * Node.js
