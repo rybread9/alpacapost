@@ -85,3 +85,15 @@ a:hover {
 .card-img-top:hover{
   opacity: 0.8;
 }
+.footer {
+  margin: 0 auto;
+  margin-top: 40px;
+  text-align: center;
+}
+#footer-link{
+  color: var(--japanese-indigo);
+  font-size: 18px;
+}
+#footer-link:hover{
+  color: var(--lavender);
+}
