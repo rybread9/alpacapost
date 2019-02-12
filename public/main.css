@@ -1,6 +1,7 @@
 :root {
   --lavender: #7D83FF;
   --white: #FBFCFF;
+  --japanese-indigo: #274156;
 }
 
 html {
@@ -33,7 +34,54 @@ a:hover {
   height: 150px;
   width: 105px;
 }
+#title>h1 {
+  font-size: 65px;
+}
+.blurb {
+  height: 18vw;
+  width: 70vw;
+  margin: 50px auto;
+  margin-bottom: 5px;
+  vertical-align: middle;
+  max-width: 600px;
+  font-size: 16px;
+}
+.postcard-image {
+  height: 40vw;
+  width: 60vw;
+  margin: 40px auto;
+}
+.postcard-image > img {
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  min-width:
+}
 .how-to{
   width: 50%;
-  margin: 10px;
+  margin: 80px auto;
+  max-width: 600px;
+}
+#how-to-header {
+  color: var(--japanese-indigo);
+  margin: 20px 0;
+}
+.list-group {
+  margin: 20px;
+  font-size: 17px;
+}
+#hot-to-btn{
+  margin: 10px auto;
+}
+
+.card {
+  border: none;
+  margin: 15px;
+}
+.card-img-top {
+  height: 200px;
+  width: 300px;
+}
+.card-img-top:hover{
+  opacity: 0.8;
 }

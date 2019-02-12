@@ -11,43 +11,54 @@
 
     <div class="main">
       <% include ./partials/header.ejs %>
-      <div class="above  text-center">
-          <!-- greet user or ask to make account -->
-          <% if(currentUser){%>
-            <h2>Welcome <%=currentUser.username%>!
-            Click on an image to begin sending postcards.</h2>
 
-          <% } else { %>
-            <h2>Welcome!
-            Please sign in or register to begin sending postcards.</h2>
-          <% } %>
+      <% if(currentUser){%>
+      <div class="blurb text-center">
+        <!-- greet user or ask to make account -->
+        <h2>Welcome <%=currentUser.username%>!</h2>
+      </div>
+      <% } %>
 
+      <div class="blurb text-center">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+
+      <div class="postcard-image text-center">
+        <img src="/images/postcards_glasses.jpeg" alt="an image of postcards and reading glasses on a table">
       </div>
 
       <div class="how-to">
+        <h2 class="text-center" id="how-to-header">Create a memorable postcard in just a few minutes</h2>
+
         <ul class="list-group">
-          <li class="list-item">Log in to alpacaPost and select the "Create Postcard" button.</li>
-          <li class="list-group-item">Choose from our library of postcards.</li>
-          <li class="list-group-item">Upload your own photos.</li>
-          <li class="list-group-item">Add a message.</li>
-          <li class="list-group-item">Save and share.</li>
+          <li class="list-group-item">1. Log in to alpacaPost and select the "Create Postcard" button.</li>
+          <li class="list-group-item">2. Choose from our library of postcards.</li>
+          <li class="list-group-item">3. Upload your own photos.</li>
+          <li class="list-group-item">4. Add a message.</li>
+          <li class="list-group-item">5. Save and share.</li>
         </ul>
+        <div style="text-align: center;">
+          <a href="/alpacapost/new" id="how-to-btn" class="btn btn-primary" role="button" name="button">Get started now</a>
+        </div>
+
       </div>
 
-      <div class="container  text-center">
+
+      <div>
+        <h3 style="margin-left: 70px;">Browse our postcard library</h3>
         <!-- container for all images -->
-        <div class="allImageContainer">
+        <div class="container">
           <!-- break images up into rows -->
           <div class="row ">
 
             <% for (let i=0; i < postcards.length; i++) { %>
               <!-- break images up into columns of 4 -->
-              <div class="column-sm-4">
+              <nav class="card column-sm-4" style="width: 18rem;">
                 <!-- make the image a link that goes to the show page of the postcard -->
 
-                <a class="cardlink" href="/alpacapost/<%=postcards[i].id%>"><img  class="cardimg" src="<%=postcards[i].frontImage%>"></a>
+                <a class="cardlink" href="/alpacapost/<%=postcards[i].id%>"><img class="card-img-top" src="<%=postcards[i].frontImage%>"></a>
 
-              </div>
+              </nav>
             <% } %>
 
           </div>
