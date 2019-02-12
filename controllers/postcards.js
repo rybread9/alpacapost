@@ -22,6 +22,26 @@ alpacapost.get('/', (req, res)=>{
   })
 })
 
+// Get message from the Database
+alpacapost.get('/messages', (req, res) => {
+  Postcard.find({}, (err, messages)=>{
+    res.render('send_message.ejs', {
+      messages: messages
+    });
+  })
+})
+
+// Post new message created by the user to the Database
+alpacapost.post('/messages', (req, res) => {
+  let message = new Postcard(req.body);
+  message.save((err)=>{
+    if(err){
+      sendStatus(500);
+      res.sendStatus(200);
+    }
+  })
+})
+
 // about get route
 alpacapost.get('/about', (req, res)=>{
   // res.send('ABOUT');
@@ -49,7 +69,7 @@ alpacapost.post('/', (req, res)=>{
 
 // new
 alpacapost.get('/new', (req, res)=>{
-  res.render('new.ejs', {
+  res.render('new_postcard.ejs', {
     currentUser: req.session.currentUser
   })
 })

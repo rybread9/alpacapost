@@ -1,35 +1,38 @@
-<nav>
-  <div class="nav left">
-    <!-- FOR LOGGED IN USERS -->
-    <% if(currentUser){%>
+<nav  >
+
+  <!-- HEADER -->
+
+
+  <% if(currentUser){%>
+  <divclass="nav nav-tabs nav-fill">
+      <!-- FOR LOGGED IN USERS -->
       <!-- home link -->
-      <a class="navlink" href="/alpacapost">HOME</a>
+      <a class="nav-link" href="/alpacapost">HOME</a>
       <!-- create new postcard -->
-      <a class="navlink" href="/alpacapost/new">CREATE</a>
+      <a class="nav-link" href="/alpacapost/new">CREATE</a>
+      <!-- <a href="/alpacapost/messages">MESSAGES</a> -->
       <!-- about page link -->
-      <a class="navlink" href="/alpacapost/about">ABOUT</a>
+      <a class="nav-link" href="/alpacapost/about">ABOUT</a>
+      <!-- log out -->
+      <form  action="/sessions?_method=DELETE" method="POST">
+        <input class="nav-link" type="submit" value="LOG OUT" />
+      </form>
   </div>
-  <div class="nav right">
-    <!-- log out -->
-    <form  action="/sessions?_method=DELETE" method="POST">
-      <input class="navlink" type="submit" name="" value="LOG OUT" />
-    </form>
+
+  <% } else { %>
+
+  <div class="nav nav-tabs nav-fill">
 
     <!-- FOR USERS NOT LOGGED IN -->
-  <% } else { %>
-    <!-- login -->
-    <div class="left">
       <!-- home link -->
-      <a class="navlink" href="/alpacapost">HOME</a>
+      <a class="nav-link active" href="/alpacapost">HOME</a>
       <!-- about page link -->
-      <a class="navlink" href="/alpacapost/about">ABOUT</a>
-    </div>
-    <div class="nav right">
-      <a class="navlink" href="/sessions/new">LOG IN</a>
+      <a class="nav-link" href="/alpacapost/about">ABOUT</a>
+      <!-- login -->
+      <a class="nav-link" href="/sessions/new">LOG IN</a>
       <!-- create new user -->
-      <a class="navlink" href="/users/new">REGISTER</a>
-    </div>
-  <% } %>
-  </div>
+      <a class="nav-link" href="/users/new">REGISTER</a>
 
+  </div>
+  <% } %>
 </nav>

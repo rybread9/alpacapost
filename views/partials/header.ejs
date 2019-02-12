@@ -1,2 +1,13 @@
-  <img src="/images/alpaca.png" alt=""></br>
-  <a href="/alpacapost"><h1>alpacaPost</h1></a>
+<header>
+  <div class="jumbotron jumbotron-fluid text-center">
+    <div class="container-fluid">
+      <img id="logo" src="/images/alpaca.png" alt=""></br>
+      <a id="title" href="/alpacapost"><h1>alpacaPost</h1></a>
+      <p>A personal way to keep in touch.</p>
+      <% if (currentUser) {%>
+      <button class="btn btn-secondary" type="button" name="button">Create Postcard</button>
+      <% } %>
+    </div>
+  </div>
+
+</header>

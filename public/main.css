@@ -1,254 +1,39 @@
+:root {
+  --lavender: #7D83FF;
+  --white: #FBFCFF;
+}
 
+html {
+  scroll-behavior: smooth;
+}
 body {
-  margin-bottom: 70px;
+  width: 100%;
+  color: var(--lavender)
 }
-/* HEADER PARTIAL */
-header {
-  background-color: rgb(0, 90, 110);
-  color: rgba(188, 147, 241, 1);
-  font-family: 'Inconsolata', monospace;
-  letter-spacing: 2px;
-  height: 210px;
-  text-align: center;
-  padding-top: 20px;
-  padding-bottom: 25px;
+a {
+  color: var(--lavender)
 }
-header > a {
-  color: rgba(188, 147, 241, 1);
-  font-family: 'Inconsolata', monospace;
-  letter-spacing: 2px;
-}
-header > a:hover {
+a:hover {
   text-decoration: none;
-  font-weight: bold;
-  color: white;
+  color: var(--white);
 }
-header > img {
-  height: 130px;
-  width: 100px;
-}
-/* NAV BAR */
-nav {
-  background-color: black;
-  border-bottom: 2px solid rgba(100, 1, 226, 0.67);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 60px;
-  font-size: 27px;
-  align-items: center;
-  padding: 20px;
-}
-.navlink {
-  border: none;
-  background-color: inherit;
-  color: rgba(188, 147, 241, 1);
-  font-family: 'Inconsolata', monospace;
-  letter-spacing: 2px;
-  font-weight: bolder;
-  margin-right: 70px;
-}
-.navlink:hover{
-  cursor: pointer;
-  text-decoration: none;
-  color: white;
-  border: 1px solid white;
-  font-weight: bold;
-}
-.right > a {
-  justify-content: flex-end;
-}
-
-/* INDEX PAGE */
-.above {
-  margin: auto;
-  margin-top: 30px;
-  text-align: center;
-  font-size: 40px;
-  color: rgba(100, 1, 226, 0.67);
-  margin-bottom: 25px;
-  font-family: 'Quicksand', sans-serif;
-}
-/* .above > a {
-  font-weight: bolder;
-  font-size: 22px;
-  color: rgba(100, 1, 226, 0.67);
-  letter-spacing: normal;
-  font-weight: bolder;
-} */
-.allImageContainer {
-  margin: 0 auto;
-}
-.container-fluid {
-  margin-left: 100px;
-  width: 95vw;
-  display: flex;
-  flex-wrap: row wrap;
-  justify-content: center;
-}
-.card {
-  margin: 10px;
-  height: 200px;
-  width: 300px;
-  /* border: none; */
-
-}
-.cardimg {
-  height: 250px;
-  width: 350px;
-  object-fit: cover;
-  margin: 5px;
-}
-img {
-  /* height: 40vw;
-  width: 60vw; */
-  height: 200px;
-  width: 300px;
-  object-fit: cover;
-  margin: 5px;
-}
-.cardimg:hover {
-  opacity: 0.8;
-}
-.cardlink {
-  height: 200px;
-  width: 300px;
-}
-
-/* SHOW PAGE */
-
-.showcard {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.showimg {
+.jumbotron-fluid {
   height: 400px;
-  width: 500px;
-  border: 7px inset black;
-  box-shadow: 4px rgb(145, 81, 170);
+  /* gradient from https://www.cssmatic.com */
+  background: var(--lavender);
+  background: -moz-linear-gradient(45deg, var(--lavender) 0%, var(--white) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, var(--lavender)), color-stop(100%, var(--white)));
+  background: -webkit-linear-gradient(45deg, var(--lavender) 0%, var(--white) 100%);
+  background: -o-linear-gradient(45deg, var(--lavender) 0%, var(--white) 100%);
+  background: -ms-linear-gradient(45deg, var(--lavender) 0%, var(--white) 100%);
+  background: linear-gradient(45deg, var(--lavender) 0%, var(--white) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d83ff', endColorstr='#fbfcff', GradientType=1 );
 }
-.showright{
-  padding-top: 0px;
-  margin-top: 0px;
-  margin-left: 30px;
-  max-width: 70%;
+#logo {
+  height: 150px;
+  width: 105px;
 }
-.messagebox {
-  border: 2px solid black;
-  min-width: 300px;
-  min-height: 200px;
-  max-width: 500px;
+.how-to{
+  width: 50%;
+  margin: 10px;
 }
-.messagebox > p {
-  font-family: 'Inconsolata', monospace;
-  font-size: 20px;
-  text-align: center;
-
-}
-.showlink {
-  border-radius: 4px;
-  margin-bottom: 10px;
-  font-size: 25px;
-  line-height: 28px;
-  height: 45px;
-  width: 100%;
-  border: none;
-  background-color: black;
-  color: rgba(188, 147, 241, 1);
-  font-family: 'Inconsolata', monospace;
-  letter-spacing: 2px;
-  font-weight: bolder;
-  margin-right: 25px;
-}
-.showlink:hover{
-  cursor: pointer;
-  text-decoration: none;
-  border: 1px solid white;
-  font-weight: bold;
-  color: white;
-}
-/* EDIT PAGE */
-label {
-  font-size: 20px;
-  color: rgba(100, 1, 226, 0.67);
-  font-family: 'Quicksand', sans-serif;
-
-}
-.editcard {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-bottom: 30px;
-  width: 100%;
-}
-.edit-container {
-  max-width: 100vw;
-  margin-left: 10px;
-}
-.form-group {
-  margin-left: 50px;
-  margin-top: 0;
-  width: 60%;
-  margin: 0 auto;
-}
-.editright {
-  width: 500px;
-  padding-left: 30px;
-}
-.edit-form {
-  margin-left: 50px;
-  margin-top: 0;
-  width: 100%;
-  margin: 0 auto;
-  margin-bottom: 50px;
-}
-.newsession {
-  margin: 0 auto;
-}
-.newlink {
-  margin-top: 20px;
-}
-.about-content {
-  font-family: 'Quicksand', sans-serif;
-  margin: 0 auto;
-  /* margin-top: 10px; */
-  width: 60%;
-  font-size: 20px;
-  margin-bottom: 40px;
-  display: flex;
-  flex-direction: row;
-  color: rgba(100, 1, 226, 0.67);
-
-}
-.right{
-  margin-left: 30px;
-}
-.about-content > p {
-
-}
-/* FOOTER by w3schools.com*/
-.footer {
-  height: 60px;
-  line-height: 60px;
-  font-family: 'Quicksand', sans-serif;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: black;
-  color: white;
-  text-align: center;
-  font-weight: 100;
-  margin-top: 50px;
-}
-.footer > p > a {
-  color: rgba(188, 147, 241, 1);
-
-}
-.footer > p > a:hover {
-  color: white;
-}
-/* ALL PHOTOS COURTESY OF UNSPLASH.COM */

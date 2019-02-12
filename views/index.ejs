@@ -5,48 +5,56 @@
   </head>
   <body>
 
-    <header>
-      <% include ./partials/header.ejs %>
-    </header>
+    <!-- NAV -->
     <% include ./partials/nav.ejs%>
-    <div class="above">
-
-      <h2>
-        <!-- greet user or ask to make account -->
-        <% if(currentUser){%>
-          Welcome <%=currentUser.username%>!
-          <h2>Click on an image to begin sending postcards.</h2>
-
-        <% } else { %>
-          Welcome!
-          <h2>Please sign in or register if you would like to begin sending postcards.</h2>
-        <% } %>
-      </h2>
 
 
-    </div>
+    <div class="main">
+      <% include ./partials/header.ejs %>
+      <div class="above  text-center">
+          <!-- greet user or ask to make account -->
+          <% if(currentUser){%>
+            <h2>Welcome <%=currentUser.username%>!
+            Click on an image to begin sending postcards.</h2>
 
-    <div class="container-fluid">
-      <!-- container for all images -->
-      <div class="allImageContainer">
-        <!-- break images up into rows -->
-        <div class="row ">
-
-          <% for (let i=0; i < postcards.length; i++) { %>
-            <!-- break images up into columns of 4 -->
-            <div class="column-sm-4">
-              <!-- make the image a link that goes to the show page of the postcard -->
-
-              <a class="cardlink" href="/alpacapost/<%=postcards[i].id%>"><img  class="cardimg" src="<%=postcards[i].frontImage%>"></a>
-              
-            </div>
+          <% } else { %>
+            <h2>Welcome!
+            Please sign in or register to begin sending postcards.</h2>
           <% } %>
 
-        </div>
+      </div>
 
+      <div class="how-to">
+        <ul class="list-group">
+          <li class="list-item">Log in to alpacaPost and select the "Create Postcard" button.</li>
+          <li class="list-group-item">Choose from our library of postcards.</li>
+          <li class="list-group-item">Upload your own photos.</li>
+          <li class="list-group-item">Add a message.</li>
+          <li class="list-group-item">Save and share.</li>
+        </ul>
+      </div>
+
+      <div class="container  text-center">
+        <!-- container for all images -->
+        <div class="allImageContainer">
+          <!-- break images up into rows -->
+          <div class="row ">
+
+            <% for (let i=0; i < postcards.length; i++) { %>
+              <!-- break images up into columns of 4 -->
+              <div class="column-sm-4">
+                <!-- make the image a link that goes to the show page of the postcard -->
+
+                <a class="cardlink" href="/alpacapost/<%=postcards[i].id%>"><img  class="cardimg" src="<%=postcards[i].frontImage%>"></a>
+
+              </div>
+            <% } %>
+
+          </div>
+
+        </div>
       </div>
     </div>
-
 
     <% include ./partials/footer.ejs %>
 

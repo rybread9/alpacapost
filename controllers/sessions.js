@@ -5,7 +5,7 @@ const User = require('../models/users.js')
 
 // takes you to sign in page
 sessions.get('/new', (req, res)=>{
-  res.render('sessions/new.ejs', {
+  res.render('sessions/new_session.ejs', {
     currentUser: req.session.currentUser
   })
   // res.send('new sessions page')

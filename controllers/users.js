@@ -5,7 +5,7 @@ const User = require('../models/users.js')
 
 // go to create new user
 users.get('/new', (req, res)=>{
-  res.render('users/new.ejs', {
+  res.render('users/new_user.ejs', {
     currentUser: req.session.currentUser
   });
 })
