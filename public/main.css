@@ -9,13 +9,23 @@ html {
 }
 body {
   width: 100%;
-  color: var(--lavender)
+  color: var(--lavender);
+  background: var(--white);
 }
-a {
-  color: var(--lavender)
+.nav {
+  background: var(--lavender);
+}
+.nav>a {
+  color: var(--white);
 }
 a:hover {
   text-decoration: none;
+  color: var(--white);
+}
+h1 {
+  color: var(--lavender);
+}
+h1:hover{
   color: var(--white);
 }
 .jumbotron-fluid {
@@ -54,7 +64,7 @@ a:hover {
 .postcard-image > img {
   height: 100%;
   width: 100%;
-  max-width: 600px;
+  max-width: 650px;
   min-width:
 }
 .how-to{
@@ -73,7 +83,9 @@ a:hover {
 #hot-to-btn{
   margin: 10px auto;
 }
+.container {
 
+}
 .card {
   border: none;
   margin: 15px;
@@ -96,4 +108,29 @@ a:hover {
 }
 #footer-link:hover{
   color: var(--lavender);
+}
+@media only screen and (max-width: 375px) {
+  html{
+    margin: 0 auto;
+  }
+  body {
+    margin: 0 auto;
+  }
+  .blurb{
+    font-size: 4vw;
+    height: 50%;
+    width: 100%;
+  }
+  .postcard-image {
+    width: 80%;
+    height: 50%;
+  }
+  .how-to {
+    width: 100%;
+  }
+  .container {
+    margin: 0 auto;
+  }
+  .card {
+    text-align: center;
 }

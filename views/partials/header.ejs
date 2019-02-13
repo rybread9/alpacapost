@@ -4,7 +4,11 @@
       <img id="logo" src="/images/alpaca.png" alt=""></br>
       <a id="title" href="/alpacapost"><h1>alpacaPost</h1></a>
       <p>A personal way to keep in touch.</p>
-      <a href="/alpacapost/new" class="btn btn-primary" role="button" name="button">Create Postcard</a>
+      <% if(currentUser) { %>
+        <a href="/alpacapost/new" class="btn btn-primary" role="button" name="button">Create Postcard</a>
+      <% } else {%>
+        <a href="/users/new" class="btn btn-primary" role="button" name="button">Create Postcard</a>
+      <% } %>
     </div>
   </div>
 

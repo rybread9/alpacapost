@@ -38,22 +38,26 @@
           <li class="list-group-item">5. Save and share.</li>
         </ul>
         <div style="text-align: center;">
-          <a href="/alpacapost/new" id="how-to-btn" class="btn btn-primary" role="button" name="button">Get started now</a>
+          <% if(currentUser) { %>
+            <a href="/alpacapost/new" class="btn btn-primary" role="button" name="button">Get Started Now</a>
+          <% } else {%>
+            <a href="/users/new" class="btn btn-primary" role="button" name="button">Get Started Now</a>
+          <% } %>
         </div>
 
       </div>
 
 
       <div>
-        <h3 style="margin-left: 70px;">Browse our postcard library</h3>
+        <h3 style="text-align: center;">Browse our postcard library</h3>
         <!-- container for all images -->
         <div class="container">
           <!-- break images up into rows -->
-          <div class="row ">
+          <div class="row">
 
             <% for (let i=0; i < postcards.length; i++) { %>
               <!-- break images up into columns of 4 -->
-              <nav class="card column-sm-4" style="width: 18rem;">
+              <nav class="card col-sm-auto" >
                 <!-- make the image a link that goes to the show page of the postcard -->
 
                 <a class="cardlink" href="/alpacapost/<%=postcards[i].id%>"><img class="card-img-top" src="<%=postcards[i].frontImage%>"></a>
