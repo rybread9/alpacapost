@@ -28,6 +28,12 @@ h1 {
 h1:hover{
   color: var(--white);
 }
+.account-link{
+  color: var(--japanese-indigo);
+}
+.account-link:hover{
+  color: var(--lavender);
+}
 .jumbotron-fluid {
   height: 400px;
   /* gradient from https://www.cssmatic.com */
@@ -50,8 +56,9 @@ h1:hover{
 .blurb {
   height: 18vw;
   width: 70vw;
-  margin: 50px auto;
+  margin: 0 auto;
   margin-bottom: 5px;
+  padding-top: 30px;
   vertical-align: middle;
   max-width: 600px;
   font-size: 16px;
@@ -83,9 +90,7 @@ h1:hover{
 #hot-to-btn{
   margin: 10px auto;
 }
-.container {
 
-}
 .card {
   border: none;
   margin: 15px;
@@ -108,6 +113,10 @@ h1:hover{
 }
 #footer-link:hover{
   color: var(--lavender);
+}
+/* LOG IN PAGE */
+input {
+  margin: 10px;
 }
 @media only screen and (max-width: 375px) {
   html{
