@@ -1,24 +1,32 @@
-<nav  >
+<nav >
 
-  <!-- HEADER -->
-
-
+  <!-- IF USER IS SIGNED IN DISPLAY THIS NAVBAR -->
   <% if(currentUser){%>
-  <divclass="nav nav-tabs nav-fill">
+  <div class="fixed-top nav logged-in nav-tabs nav-fill">
       <!-- FOR LOGGED IN USERS -->
       <!-- home link -->
-      <a class="nav-link" href="/alpacapost">HOME</a>
-      <!-- create new postcard -->
-      <a class="nav-link" href="/alpacapost/new">CREATE</a>
-      <!-- <a href="/alpacapost/messages">MESSAGES</a> -->
-      <!-- about page link -->
-      <a class="nav-link" href="/alpacapost/about">ABOUT</a>
-      <!-- log out -->
-      <form  action="/sessions?_method=DELETE" method="POST">
-        <input class="nav-link" type="submit" value="LOG OUT" />
-      </form>
+      <div class="left-nav">
+        <a class="nav-link" href="/alpacapost">HOME</a>
+        <!-- create new postcard -->
+        <a class="nav-link" href="/alpacapost/new">CREATE</a>
+        <!-- <a href="/alpacapost/messages">MESSAGES</a> -->
+        <!-- about page link -->
+        <a class="nav-link" href="/alpacapost/about">ABOUT</a>
+      </div>
+
+      <div class="right-nav">
+        <!-- USERNAME -->
+        <h5 id="username">Welcome <%=currentUser.username%>!</h5>
+        <!-- log out -->
+        <form class="nav-right" action="/sessions?_method=DELETE" method="POST">
+          <input class="nav-link log-out" type="submit" value="LOG OUT" />
+        </form>
+      </div>
+
+
   </div>
 
+  <!-- IF USER IS **NOT** SIGNED IN DISPLAY THIS NAVBAR -->
   <% } else { %>
 
   <div class="nav nav-tabs nav-fill sticky-top">

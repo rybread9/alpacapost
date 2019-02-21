@@ -3,7 +3,7 @@
   <head>
     <% include ../partials/head.ejs %>
   </head>
-  <body>
+  <body class="text-center">
       <!-- NAV -->
       <% include ../partials/nav.ejs%>
       <!-- HEADER -->
@@ -13,15 +13,16 @@
     <div class="above">
 
       <h2>Please register</h2>
+      <h5>Already a member? <a class="account-link" href="/sessions/new">Log in here.</a> </h5>
     </div>
     <div class="form newsession">
       <form action="/users" method="POST">
         <div class="form-group">
 
-          <input class="form-control" type="text" name="username" placeholder="Username"/>
+          <input class="form-control-lg new-user" type="text" name="username" placeholder="Username"/><br />
 
-          <input class="form-control" type="password" name="password" placeholder="Password"/>
-          <input class="form-control showlink newlink" type="submit" value="Create Account" />
+          <input class="form-control-lg new-user" type="password" name="password" placeholder="Password"/><br />
+          <input class="btn btn-success new-user" type="submit" value="Create Account" />
         </div>
 
       </form>

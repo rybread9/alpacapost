@@ -4,20 +4,18 @@
     <% include ./partials/head.ejs %>
   </head>
   <body>
-
     <!-- NAV -->
     <% include ./partials/nav.ejs%>
 
+    <% include ./partials/header.ejs %>
 
-    <div class="main">
-      <% include ./partials/header.ejs %>
-
-      <% if(currentUser){%>
-      <div class="blurb text-center">
+    <!--<div>
+       <% if(currentUser){%>
+      <div class="welcome text-center"> -->
         <!-- greet user or ask to make account -->
-        <h2>Welcome <%=currentUser.username%>!</h2>
+        <!-- <h2>Welcome <%=currentUser.username%>!</h2>
       </div>
-      <% } %>
+      <% } %> -->
 
       <div class="blurb text-center">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

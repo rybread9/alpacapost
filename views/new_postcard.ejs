@@ -7,36 +7,51 @@
     <!-- NAV -->
     <% include ./partials/nav.ejs%>
 
-    <div class="above">
-      Create a Postcard.
-    </div>
-
-    <div class="container-fluid">
-      <div class="editcard">
-        <div class="form">
-          <form action="/alpacapost" method="POST">
-              <!-- edit front image url -->
-              <label for="front image">Front Image URL: </label>
-              <input class="form-control" type="img" name="frontImage" placeholder="image URL"/><br/>
-              <!-- Send To: <input type="email" name="sendToEmail" placeholder="receiver's email here"/><br/> -->
-              <!-- edit message -->
-              <label for="message">Message: </label>
-              <input class="form-control" type="text" name="message" placeholder="Life is good on the road..."/><br/>
-              <!-- edit send to -->
-              <label for="send to">Send To: </label>
-              <input class="form-control" type="mailto" name="sendToEmail" placeholder="email here"/><br/>
-              <!-- edit send from -->
-              <label for="from">From: </label>
-              <input class="form-control" type="text" name="sendFromName" placeholder="your name here"/><br/>
-              <!-- submit edits -->
-              <input class="showlink" type="submit" value="Create Postcard"/>
-          </form>
-        </div>
-
+    <div class="create-main">
+      <!-- HEADER -->
+      <div class="create-header">
+        <img id="logo" src="/images/alpaca.png" alt=""></br>
+        <h3>Create a Postcard</h3>
       </div>
 
+      <!-- CREATE NEW POSTCARD FORM -->
+      <div class="container">
+        <div>
+          <div class="form">
+            <form action="/alpacapost" method="POST">
+                <!-- front image url -->
+                <div class="form-group">
+                  <label for="front image">Front Image URL </label>
+                  <input class="form-control" type="img" name="frontImage" placeholder="Image URL"/><br/>
+                </div>
+
+                <!-- Send To: <input type="email" name="sendToEmail" placeholder="receiver's email here"/><br/> -->
+                <!-- message -->
+                <div class="form-group">
+                  <label for="message">Message </label>
+                  <textarea class="form-control" type="text" name="message"
+                  rows="3" placeholder="In seeking happiness for others, you will find it in yourself."></textarea><br/>
+                </div>
+
+                <!-- send to -->
+                <!-- <label for="send to">Send To: </label>
+                <input class="form-control" type="text" name="sendToEmail" placeholder="email here"/><br/> -->
+                <!-- send from -->
+                <!-- <label for="from">From: </label>
+                <input class="form-control" type="text" name="sendFromName" placeholder="your name here"/><br/> -->
+                <!-- submit -->
+                <div id="create-btn">
+                  <input  class="btn btn-primary" type="submit" value="Create Postcard"/>
+                </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
 
+
+    <!-- FOOTER -->
     <% include ./partials/footer.ejs %>
 
   </body>
