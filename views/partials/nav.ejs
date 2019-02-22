@@ -6,6 +6,9 @@
       <!-- FOR LOGGED IN USERS -->
       <!-- home link -->
       <div class="left-nav">
+        <!-- mini logo -->
+        <img id="nav-logo" src="/images/alpaca-head.png" alt="">
+        <!-- home link -->
         <a class="nav-link" href="/alpacapost">HOME</a>
         <!-- create new postcard -->
         <a class="nav-link" href="/alpacapost/new">CREATE</a>
@@ -14,10 +17,14 @@
         <a class="nav-link" href="/alpacapost/about">ABOUT</a>
       </div>
 
+      <div class="middle-nav">
+
+      </div>
+
       <div class="right-nav">
-        <!-- USERNAME -->
+        <!-- username -->
         <h5 id="username">Welcome <%=currentUser.username%>!</h5>
-        <!-- log out -->
+        <!-- end session -->
         <form class="nav-right" action="/sessions?_method=DELETE" method="POST">
           <input class="nav-link log-out" type="submit" value="LOG OUT" />
         </form>
@@ -32,6 +39,8 @@
   <div class="nav nav-tabs nav-fill sticky-top">
 
     <!-- FOR USERS NOT LOGGED IN -->
+      <!-- mini logo -->
+      <img id="nav-logo" src="/images/alpaca-head.png" alt="">
       <!-- home link -->
       <a class="nav-link" href="/alpacapost">HOME</a>
       <!-- about page link -->

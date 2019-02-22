@@ -42,6 +42,11 @@ body {
   display: flex;
   flex-direction: row;
 }
+#nav-logo {
+  height: 40px;
+  width: 40px;
+  margin-left: 6px;
+}
 .right-nav{
   display: flex;
   flex-direction: row;
@@ -154,12 +159,45 @@ body {
 
 /* ------SHOW INDIVIDUAL POSTCARD------ */
 
+.show-body {
+  background-color: rgba(39, 65, 85, 0.22);
+}
+.show-container {
+  margin: 100px auto;
+  padding-top: 50px;
+  padding-right: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--white);
+}
+.mini-show-img {
+  height: 130px;
+  width: 169px;
+  margin: 5px 0;
+}
+#mini-message-text {
+  font-size: 10px;
+  color: var(--japanese-indigo);
+}
+.right-side{
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.show-btn {
+  margin: 5px 0;
+  width: 100%;
+}
+/* flip card animation from w3schools.com */
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
-  margin: 150px auto;
+  margin: auto;
+  margin-bottom: 50px;
   background-color: transparent;
-  width: 45vw;
-  height: 300px;
+  width: 480px;
+  height: 360px;
   border: 1px solid #f1f1f1;
   perspective: 1000px;
 }
@@ -190,12 +228,14 @@ body {
 }
 /* Style the back side */
 .flip-card-back {
-  background-color: var(--white);
+  background-color: rgba(#dbd9d6, 0.94);
   color: var(--japanese-indigo);
   transform: rotateY(180deg);
+  /* border: 1px solid #554308; */
+  padding: 20px;
 }
 #message-text{
-  
+
 }
 #show-img{
   height: 100%;
