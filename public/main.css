@@ -4,6 +4,7 @@
   --lavender: #7D83FF;
   --white: #FBFCFF;
   --japanese-indigo: #274156;
+  --japanese-indigo-transparent: rgba(39, 65, 85, 0.22);
 }
 
 /* ------GENERAL STYLINGS------ */
@@ -160,7 +161,7 @@ body {
 /* ------SHOW INDIVIDUAL POSTCARD------ */
 
 .show-body {
-  background-color: rgba(39, 65, 85, 0.22);
+  background-color: var(--japanese-indigo-transparent);
 }
 .show-container {
   margin: 100px auto;
@@ -189,6 +190,11 @@ body {
 .show-btn {
   margin: 5px 0;
   width: 100%;
+}
+.add-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 /* flip card animation from w3schools.com */
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
