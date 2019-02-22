@@ -149,10 +149,19 @@ body {
 
 
 /* ------CREATE NEW POSTCARD------ */
+.create-body {
+  background-color: var(--japanese-indigo-transparent);
+}
+.create-main {
+  width: 80%;
+  margin-top:100px;
+  padding: 30px;
+  background-color: var(--white);
+}
 .create-header{
   text-align: center;
   margin: 30px 0;
-  margin-top: 70px;
+  /* margin-top: 70px; */
 }
 #create-btn{
   text-align: center;
