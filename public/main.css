@@ -4,7 +4,7 @@
   --lavender: #7D83FF;
   --white: #FBFCFF;
   --japanese-indigo: #274156;
-  --japanese-indigo-transparent: rgba(39, 65, 85, 0.22);
+  --japanese-indigo-transparent: #f1f1f1;
 }
 
 /* ------GENERAL STYLINGS------ */
@@ -149,31 +149,36 @@ body {
 
 
 /* ------CREATE NEW POSTCARD------ */
-.create-body {
+.create-body, .edit-body, .show-body {
   background-color: var(--japanese-indigo-transparent);
 }
-.create-main {
+.create-main, .edit-main, .show-main {
   width: 80%;
-  margin-top:100px;
+  max-width: 720px;
   padding: 30px;
   background-color: var(--white);
 }
-.create-header{
+.create-header, .edit-header{
   text-align: center;
-  margin: 30px 0;
+  margin: 50px 0;
   /* margin-top: 70px; */
+}
+textarea{
+  height: 125px;
+  max-height: 125px;
 }
 #create-btn{
   text-align: center;
 }
 
+
 /* ------SHOW INDIVIDUAL POSTCARD------ */
 
-.show-body {
-  background-color: var(--japanese-indigo-transparent);
-}
-.show-container {
+.show-main {
   margin: 100px auto;
+  height: 100%;
+  width: 720px;
+  max-width: 720px;
   padding-top: 50px;
   padding-right: 30px;
   display: flex;
@@ -213,7 +218,7 @@ body {
   background-color: transparent;
   width: 480px;
   height: 360px;
-  border: 1px solid #f1f1f1;
+  border: 1px solid var(--japanese-indigo-transparent);
   perspective: 1000px;
 }
 /* This container is needed to position the front and back side */
@@ -249,14 +254,41 @@ body {
   /* border: 1px solid #554308; */
   padding: 20px;
 }
-#message-text{
-
-}
 #show-img{
   height: 100%;
   width: 100%;
 }
 
+
+/* ------EDIT PAGE------ */
+.edit-main{
+  margin-top: 40px;
+  max-width: 905px;
+}
+.edit-header{
+  margin: 50px;
+}
+#edit-img{
+  height: 350px;
+  width: 100%;
+  margin: 0 auto;
+}
+.edit-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.edit-right{
+  height: 350px;
+  width: 100%;
+  margin-left: 30px;
+  border: 1px solid var(--japanese-indigo-transparent);
+  padding: 20px;
+}
+#edit-submit-btn{
+  text-align: center;
+  width: 100%;
+}
 
 /* ------NEW SESSION------ */
 .new-session, .new-user{
@@ -282,6 +314,7 @@ body {
 
 
 /* ------RESPONSIVE------ */
+
 @media only screen and (max-width: 375px) {
 
   /* ------GENERAL------ */
@@ -293,9 +326,18 @@ body {
   }
 
   /* ------NAV BAR------ */
+  #nav-logo {
+    /* display: none; */
+  }
   #username {
     display: none;
   }
+  .nav-link {
+    width: 70px;
+    height: 32px;
+    font-size: 2.8vw;
+  }
+
 
   /* ------HEADER------ */
   #logo {
@@ -323,4 +365,34 @@ body {
   }
   .card {
     text-align: center;
+}
+
+/* ------SHOW INDIVIDUAL POSTCARD PAGE----- */
+.show-main {
+  margin: 0 auto;
+  margin-top: 70px;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.flip-card {
+  display: none;
+}
+.mini-show-img {
+  /* height: 250px;
+  width: 340px; */
+  height: 55vw;
+  width: 90vw;
+  font-size: 12vw;
+  margin: 10px 0;
+}
+.left-side {
+
+}
+.right-side{
+  margin: 30px auto;
+
 }

@@ -12,20 +12,14 @@
         <a class="nav-link" href="/alpacapost">HOME</a>
         <!-- create new postcard -->
         <a class="nav-link" href="/alpacapost/new">CREATE</a>
-        <!-- <a href="/alpacapost/messages">MESSAGES</a> -->
-        <!-- about page link -->
         <a class="nav-link" href="/alpacapost/about">ABOUT</a>
-      </div>
-
-      <div class="middle-nav">
-
       </div>
 
       <div class="right-nav">
         <!-- username -->
         <h5 id="username">Welcome <%=currentUser.username%>!</h5>
         <!-- end session -->
-        <form class="nav-right" action="/sessions?_method=DELETE" method="POST">
+        <form action="/sessions?_method=DELETE" method="POST">
           <input class="nav-link log-out" type="submit" value="LOG OUT" />
         </form>
       </div>

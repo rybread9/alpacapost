@@ -3,41 +3,62 @@
   <head>
     <% include ./partials/head.ejs %>
   </head>
-  <body>
+  <body class="edit-body">
+    <!-- NAV -->
     <% include ./partials/nav.ejs%>
-    <div class="above">
-      Edit your postcard.
-    </div>
-    <div class="container-fluid edit-container">
-      <div class="editcard">
-        <!-- SHOW IMAGE ON LEFT -->
-        <div class="images">
-          <img class="showimg" src="<%= postcard.frontImage %>" />
-        </div>
-        <!-- SHOW EDIT FORM ON RIGHT -->
-        <div class="form">
-          <form class="editright" action="/alpacapost/<%=postcard.id%>?_method=PUT" method="POST">
-            <div class="form-group edit-form">
-              <!-- edit front image path -->
-              <label for="front image">Front Image: </label>
-              <input class="form-control" type="img" name="frontImage" value="<%=postcard.frontImage%>"/><br/>
-              <!-- edit message -->
-              <label for="message">Message: </label>
-              <textarea class="form-control" type="textarea" name="message" placeholder="In seeking happiness for others, you will find it in yourself."></textarea><br/>
-              <!-- edit send to -->
-              <label for="send to">Send To: </label>
-              <input class="form-control" type="email" name="sendToEmail" placeholder="email here"/><br/>
-              <!-- edit from -->
-              <label for="from">From: </label>
-              <input class="form-control" type="text" name="sendFromName" placeholder="your name here"/><br/>
-              <!-- submit button -->
-              <input class="showlink" type="submit" value="SUBMIT"/>
-            </div>
-          </form>
-        </div>
 
-      </div>
+    <!-- HEADER -->
+    <div class="edit-header">
+      <img id="logo" src="/images/alpaca.png" alt=""></br>
+      <h3>Edit your Postcard</h3>
     </div>
+
+    <div class="edit-main container">
+
+
+      <!-- EDIT POSTCARD FORM -->
+      <div class="container">
+        <div class="edit-container">
+          <!-- SHOW IMAGE ON LEFT -->
+          <div class="edit-img-container">
+            <div class="edit-left">
+              <img id="edit-img" src="<%= postcard.frontImage %>" />
+            </div>
+          </div>
+
+            <!-- SHOW EDIT FORM ON RIGHT -->
+            <div class="edit-right">
+              <div >
+                <div class="form">
+                  <form action="/alpacapost/<%=postcard.id%>?_method=PUT" method="POST">
+                    <div class="form-group edit-form">
+
+                      <!-- edit front image path -->
+                      <label for="front image">Front Image URL </label>
+                      <input class="form-control" type="img" name="frontImage" value="<%=postcard.frontImage%>"/><br/>
+
+                      <!-- edit message -->
+                      <label for="message">Message </label>
+                      <textarea class="form-control" type="textarea" name="message"
+                      rows="3" placeholder="In seeking happiness for others, you will find it in yourself."></textarea><br/>
+
+                      <div id="edit-submit-btn">
+                        <input  class="btn btn-success" type="submit" value="SUBMIT"/>
+                      </div>
+
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
   <% include ./partials/footer.ejs %>
   </body>
 </html>
