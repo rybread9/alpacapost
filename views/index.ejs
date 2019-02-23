@@ -9,16 +9,11 @@
 
     <% include ./partials/header.ejs %>
 
-    <!--<div>
-       <% if(currentUser){%>
-      <div class="welcome text-center"> -->
-        <!-- greet user or ask to make account -->
-        <!-- <h2>Welcome <%=currentUser.username%>!</h2>
-      </div>
-      <% } %> -->
 
       <div class="blurb text-center">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>At alpacaPost we relish the tangibility and love that goes into a real postcard. Regular mail can be quite slow, especially when sending from a foreign country. alpacaPost users can choose from an index of pre-loaded postcards that they can add a message to or they can upload their own photo to send.</p>
+        <img id="index-alpaca-img" src="/images/alpacaface.jpeg" />
+        <p>Alpacas are not limited to any specific type of environment so we thought they would be well-suited for the task of safely delivering a message to your loved ones.</p>
       </div>
 
       <div class="postcard-image text-center">
@@ -47,9 +42,9 @@
 
 
       <div>
-        <h3 style="text-align: center;">Browse our postcard library</h3>
+        <h3 class="text-center">Browse our postcard library</h3>
         <!-- container for all images -->
-        <div class="container">
+        <div class="browse-main container">
           <!-- break images up into rows -->
           <div class="row">
 

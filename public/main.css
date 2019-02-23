@@ -14,7 +14,7 @@ html {
 body {
   width: 100%;
   color: var(--lavender);
-  background: var(--white);
+  background-color: var(--japanese-indigo-transparent);
 }
 
 /* ------NAV BAR------ */
@@ -94,14 +94,20 @@ body {
 
 /* ------ABOUT SECTION------ */
 .blurb {
-  height: 200px;
+  height: 800px;
   width: 70vw;
   margin: 0 auto;
   margin-bottom: 5px;
-  padding-top: 30px;
+  padding-top: 10px;
   vertical-align: middle;
   max-width: 600px;
   font-size: 16px;
+  color: var(--japanese-indigo);
+}
+#index-alpaca-img{
+  height: 600px;
+  width: 85%;
+  padding: 40px 0;
 }
 .postcard-image {
   height: 40vw;
@@ -135,6 +141,9 @@ body {
 
 
 /* ------INDEX OF POSTCARDS------ */
+.browse-main{
+  background: var(--white);
+}
 .card {
   border: none;
   margin: 15px;
@@ -149,8 +158,7 @@ body {
 
 
 /* ------CREATE NEW POSTCARD------ */
-.create-body, .edit-body, .show-body {
-  background-color: var(--japanese-indigo-transparent);
+body {
 }
 .create-main, .edit-main, .show-main {
   width: 80%;
@@ -347,17 +355,23 @@ textarea{
   /* ------ABOUT SECTION------ */
   .blurb{
     font-size: 4vw;
-    height: 300px;
+    height: 800px;
     width: 90%;
     vertical-align: middle;
+  }
+  #index-alpaca-img{
+    height: 500px;
+    width: 100%;
+    padding: 40px 0;
   }
   .how-to {
     width: 100%;
   }
 
   /* ------INDEX OF POSTCARDS------ */
+
   .postcard-image {
-    width: 80%;
+    width: 100%;
     height: 50%;
   }
   .container {
@@ -365,7 +379,7 @@ textarea{
   }
   .card {
     text-align: center;
-}
+  }
 
 /* ------SHOW INDIVIDUAL POSTCARD PAGE----- */
 .show-main {
