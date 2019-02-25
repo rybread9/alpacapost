@@ -68,6 +68,7 @@ body {
 }
 #title:hover{
   color: var(--white);
+  text-decoration: none;
 }
 .jumbotron-fluid {
   height: 400px;
