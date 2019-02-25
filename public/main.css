@@ -10,11 +10,13 @@
 /* ------GENERAL STYLINGS------ */
 html {
   scroll-behavior: smooth;
+  position: relative;
+  min-height: 100%
 }
 body {
   height: 100%;
   width: 100%;
-  margin: 0;
+  margin: 0 0 40px;
   padding: 0;
   color: var(--lavender);
   background-color: var(--japanese-indigo-transparent);
@@ -147,6 +149,7 @@ body {
 /* ------INDEX OF POSTCARDS------ */
 .browse-main{
   background: var(--white);
+  padding-bottom: 40px;
 }
 .card {
   border: none;
@@ -315,9 +318,10 @@ textarea{
   margin: 0 auto;
   margin-top: 40px;
   text-align: center;
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
+
 }
 #footer-link{
   color: var(--japanese-indigo);
