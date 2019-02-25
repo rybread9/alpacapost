@@ -23,7 +23,7 @@
             <% if (postcard.message !== '') { %>
             <div>
               <div class="flip-card-back">
-                <p id="message-text">
+                <p class="message-text">
                   <%= postcard.message %>
                 </p>
               </div>
@@ -35,11 +35,14 @@
             </div>
           <% } %>
 
-        </div>
+
 
         <% } else { %>
-        <p>To begin creating postcards, please log in or register.</p>
+          <div class="flip-card-back">
+            <p class="message-text">To begin creating postcards, please log in or register.</p>
+          </div>
         <% } %>
+        </div>
       </div>
 
       <!-- BUTTONS -->
@@ -48,20 +51,24 @@
         <img class="mini-show-img" src="<%= postcard.frontImage %>" />
 
         <div class="mini-show-img">
-          <p id="mini-message-text">
+          <p class="mini-message-text">
             <%= postcard.message %>
           </p>
         </div>
+
+        <% if(currentUser) { %>
 
         <a class="btn btn-warning show-btn" href="/alpacapost/<%= postcard.id %>/edit">EDIT</a>
 
         <form action="/alpacapost/<%=postcard.id%>?_method=DELETE" method="POST">
           <input class="btn btn-danger show-btn" type="submit" value="DELETE" />
         </form>
+        <% } %>
+
       </div>
     </div>
 
+    <% include ./partials/footer.ejs %>
 
   </body>
-  <% include ./partials/footer.ejs %>
 </html>

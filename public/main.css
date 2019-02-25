@@ -199,7 +199,7 @@ textarea{
   width: 169px;
   margin: 5px 0;
 }
-#mini-message-text {
+.mini-message-text {
   font-size: 10px;
   color: var(--japanese-indigo);
 }
@@ -381,32 +381,40 @@ textarea{
     text-align: center;
   }
 
-/* ------SHOW INDIVIDUAL POSTCARD PAGE----- */
-.show-main {
-  margin: 0 auto;
-  margin-top: 70px;
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.flip-card {
-  display: none;
-}
-.mini-show-img {
-  /* height: 250px;
-  width: 340px; */
-  height: 55vw;
-  width: 90vw;
-  font-size: 12vw;
-  margin: 10px 0;
-}
-.left-side {
+  /* ------SHOW INDIVIDUAL POSTCARD PAGE----- */
+  .show-main, .edit-main {
+    margin: 0 auto;
+    margin-top: 70px;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .flip-card {
+    display: none;
+  }
+  .mini-show-img {
+    height: 55vw;
+    width: 90vw;
+    font-size: 12vw;
+    margin: 10px 0;
+  }
+  .right-side{
+    margin: 30px auto;
+  }
 
-}
-.right-side{
-  margin: 30px auto;
-
-}
+  /* ------EDIT PAGE------ */
+  .edit-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .edit-right{
+    margin: 0 auto;
+  }
+  #edit-img {
+    height: 55vw;
+    width: 90vw;
+  }
