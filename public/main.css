@@ -12,7 +12,10 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 0;
   color: var(--lavender);
   background-color: var(--japanese-indigo-transparent);
 }
@@ -307,9 +310,14 @@ textarea{
 
 /* ------FOOTER------ */
 .footer {
+  height: 40px;
+  width: 100%;
   margin: 0 auto;
   margin-top: 40px;
   text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 #footer-link{
   color: var(--japanese-indigo);
